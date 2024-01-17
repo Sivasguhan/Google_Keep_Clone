@@ -1,0 +1,37 @@
+@import '../../src/components/Header/header.scss';
+@import '../../src/components/UI/ImageButton/imageButton.scss';
+@import '../../src/components/SideBar/sidebar.scss';
+@import '../../src/components/TitleInput/titleinput.scss';
+@import '../../src/components/UI/ListBox/listbox.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Raleway', sans-serif;
+}
+
+.main-content {
+    display: flex;
+}
+
+.list-content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.notes-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.no-notes{
+    margin: 10rem auto;
+    color: rgb(135, 128, 128);
+}

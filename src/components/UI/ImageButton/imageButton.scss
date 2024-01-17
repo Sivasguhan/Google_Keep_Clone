@@ -1,0 +1,17 @@
+.imageContainer {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    &:hover {
+        background-color: rgba(60, 64, 67, .08);
+    }
+}
