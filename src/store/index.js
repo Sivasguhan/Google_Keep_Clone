@@ -1,16 +1,16 @@
-import { createSlice, configureStore, current } from "@reduxjs/toolkit";
+import { createSlice, configureStore, current } from '@reduxjs/toolkit';
 
 const notesSlice = createSlice({
-    name: "notes",
+    name: 'notes',
     initialState: { notes: [] },
     reducers: {
         addNote(state, action) {
-            state.notes.unshift(action.payload)
+            state.notes.unshift(action.payload);
         },
         deleteNote(state, action) {
             const oldNotes = current(state.notes);
-            const newNotes = oldNotes.filter(note => note.id !== action.payload)
-            state.notes = newNotes
+            const newNotes = oldNotes.filter(note => note.id !== action.payload);
+            state.notes = newNotes;
         },
         editNote(state, action) {
             const notes = current(state.notes).slice();
@@ -20,19 +20,19 @@ const notesSlice = createSlice({
                     const newNote={
                         ...oldNote,
                         [action.payload.name]:action.payload.value
-                    }
-                    notes.splice(notes.indexOf(note),1,newNote)
+                    };
+                    notes.splice(notes.indexOf(note),1,newNote);
                 }
-            })
-            state.notes=notes
+            });
+            state.notes=notes;
         }
     }
-})
+});
 
 const store = configureStore({
     reducer: notesSlice.reducer
-})
+});
 
-export const notesActions = notesSlice.actions
+export const notesActions = notesSlice.actions;
 
 export default store;

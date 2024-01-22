@@ -1,33 +1,33 @@
-import { useState } from "react";
-import Header from "./components/Header/Header";
-import SideBar from "./components/SideBar/SideBar";
-import TitleInput from "./components/TitleInput/TitleInput";
-import ListBox from "./components/UI/ListBox/ListBox";
-import { useDispatch, useSelector } from "react-redux";
-import { notesActions } from "./store";
-import { v4 } from "uuid";
+import { useState } from 'react';
+import Header from './components/Header/Header';
+import SideBar from './components/SideBar/SideBar';
+import TitleInput from './components/TitleInput/TitleInput';
+import ListBox from './components/UI/ListBox/ListBox';
+import { useDispatch, useSelector } from 'react-redux';
+import { notesActions } from './store';
+import { v4 } from 'uuid';
 
 
 export default function App() {
 
-    const [menuIsOpened, setMenuIsOpened] = useState(false)
-    const [searchValue, setSearchValue] = useState('')
-    const [title, setTitle] = useState('')
+    const [menuIsOpened, setMenuIsOpened] = useState(false);
+    const [searchValue, setSearchValue] = useState('');
+    const [title, setTitle] = useState('');
     const dispatch = useDispatch();
-    const notes = useSelector(state => state.notes)
-    const filteredNotes = notes.filter(note => note.title.includes(searchValue))
+    const notes = useSelector(state => state.notes);
+    const filteredNotes = notes.filter(note => note.title.includes(searchValue));
 
     const handleChangeTitle = (e) => {
         setTitle(e.target.value);
-    }
+    };
 
     const handleKeyPress = (e) => {
         if (e.key === 'Enter' && title.length > 0) {
             const id = v4();
-            dispatch(notesActions.addNote({ id: id, title: title, description: "" }))
-            setTitle('')
+            dispatch(notesActions.addNote({ id: id, title: title, description: '' }));
+            setTitle('');
         }
-    }
+    };
 
     return (
         <>
@@ -57,5 +57,5 @@ export default function App() {
                 </section>
             </div>
         </>
-    )
+    );
 }

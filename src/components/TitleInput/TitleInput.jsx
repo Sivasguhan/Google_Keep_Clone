@@ -8,5 +8,5 @@ export default function TitleInput({ title, handleChangeTitle, handleKeyPress })
             onChange={handleChangeTitle}
             onKeyDown={handleKeyPress}
         />
-    )
+    );
 }

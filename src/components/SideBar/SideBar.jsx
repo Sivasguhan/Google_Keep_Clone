@@ -1,15 +1,14 @@
-import ImageButton from '../UI/ImageButton/ImageButton'
-import Reload from '../../../assets/images/reload.png'
-import Notes from '../../../assets/images/notes.jpeg'
-import Remainder from '../../../assets/images/remainder.png'
-import EditLabel from '../../../assets/images/editlabel.png'
-import Archive from '../../../assets/images/archive.png'
-import Trash from '../../../assets/images/trash.png'
-import { useState } from 'react'
+import ImageButton from '../UI/ImageButton/ImageButton';
+import Notes from '../../../assets/images/notes.jpeg';
+import Remainder from '../../../assets/images/remainder.png';
+import EditLabel from '../../../assets/images/editlabel.png';
+import Archive from '../../../assets/images/archive.png';
+import Trash from '../../../assets/images/trash.png';
+import { useState } from 'react';
 
 export default function SideBar({ open }) {
 
-    const [isHovering, setIsHovering] = useState(false)
+    const [isHovering, setIsHovering] = useState(false);
 
     const shouldOpen = open || isHovering;
 
@@ -40,5 +39,5 @@ export default function SideBar({ open }) {
                 {shouldOpen && <span>Trash</span>}
             </div>
         </nav>
-    )
+    );
 }
