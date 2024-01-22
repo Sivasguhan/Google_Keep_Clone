@@ -1,0 +1,20 @@
+.main-content {
+    display: flex;
+}
+
+.list-content {
+    @include flex-style(column);
+    margin: 0 auto;
+}
+
+.notes-content {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem;
+}
+
+.no-notes{
+    margin: 10rem auto;
+    color: rgb(135, 128, 128);
+}

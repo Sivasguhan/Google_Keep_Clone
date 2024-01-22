@@ -1,17 +1,14 @@
 .listbox {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    margin-top: 50px;
-    border: 1px solid rgb(209, 190, 190);
+    border: 1px solid $border-color;
     width: 300px;
     height: 300px;
-    overflow: hidden;
+    overflow: auto;
 
     span {
-        display: flex;
-        border-bottom: 1px solid rgb(209, 190, 190);
-        align-items: center;
+        @include flex-style(row,space-between,center);
+        border-bottom: 1px solid $border-color;
         padding: 0 10px;
-        justify-content: space-between;
 
         svg {
             cursor: pointer;
@@ -26,7 +23,7 @@
         }
     }
 
-    textarea {
+    p {
         width: 100%;
         height: 70%;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -36,9 +33,9 @@
         border: none;
         outline: none;
 
-        &::-webkit-scrollbar-track {
-            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-            background-color: #F5F5F5;
+        &:empty:not(:focus)::before {
+            content: attr(placeholder);
+            font-size: 15px
         }
 
         &::-webkit-scrollbar {
@@ -51,4 +48,18 @@
         }
     }
 
+}
+
+.remove {
+    animation: zoom forwards 0.5s ease-out 1;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    100% {
+        transform: scale(0, 0);
+    }
 }

@@ -1,9 +1,7 @@
 .header {
-    display: flex;
-    border-bottom: 1px solid rgb(209, 190, 190);
+    @include flex-style(row,space-between,center);
+    border-bottom: 1px solid $border-color;
     height: 5rem;
-    align-items: center;
-    justify-content: space-between;
     padding: 5px;
 }
 

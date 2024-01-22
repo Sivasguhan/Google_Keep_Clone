@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { notesActions } from "./store";
 import { v4 } from "uuid";
 
+
 export default function App() {
 
     const [menuIsOpened, setMenuIsOpened] = useState(false)

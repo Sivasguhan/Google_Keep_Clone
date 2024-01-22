@@ -1,15 +1,21 @@
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
 import { notesActions } from "../../../store";
+import { useEffect, useState } from "react";
 
 export default function ListBox({ id }) {
     const dispatch = useDispatch()
     const notes = useSelector(state => state.notes)
     const currentNote = notes.filter(note => note.id === id)[0]
+    const [cleanUp, setCleanUp] = useState(false)
 
     const handleDelete = () => {
-        dispatch(notesActions.deleteNote(id))
+        setCleanUp(true)
+        setTimeout(()=>{
+            dispatch(notesActions.deleteNote(id))
+        },500)
     }
+
 
     const handleTitleChange = (e) => {
         dispatch(notesActions.editNote(
@@ -32,7 +38,7 @@ export default function ListBox({ id }) {
     }
 
     return (
-        <div className="listbox">
+        <div className={cleanUp ? "listbox remove" : "listbox"} >
             <span>
                 <input
                     spellCheck="false"
@@ -42,13 +48,9 @@ export default function ListBox({ id }) {
                 />
                 <RiDeleteBin6Line onClick={handleDelete} />
             </span>
-            <textarea
-                spellCheck="false"
-                placeholder="Description...."
-                value={currentNote.description}
-                onChange={handleDescriptionChange}
-            >
-            </textarea>
+            <p contentEditable placeholder="Description..." onInput={handleDescriptionChange}>
+                {currentNote.description}
+            </p>
         </div>
     )
 }

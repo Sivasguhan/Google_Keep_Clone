@@ -7,9 +7,8 @@
     overflow: hidden;
 
     div {
-        display: flex;
+        @include flex-style(row,flex-start,center);
         gap: 0.5rem;
-        align-items: center;
         padding-top: 10px;
 
         &:hover {
@@ -19,12 +18,12 @@
 
     &:hover {
         width: 250px;
-        border-right: 1px solid rgb(209, 190, 190);
+        border-right: 1px solid $border-color;
     }
 
 }
 
 .navOpenStyle {
     width: 250px;
-    border-right: 1px solid rgb(209, 190, 190);
+    border-right: 1px solid $border-color;
 }
