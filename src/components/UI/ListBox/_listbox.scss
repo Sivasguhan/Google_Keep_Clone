@@ -20,10 +20,11 @@
             outline: none;
             height: 40px;
             font-weight: 600;
+            font-size: medium;
         }
     }
 
-    p {
+    textarea {
         width: 100%;
         height: 70%;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -32,11 +33,7 @@
         resize: none;
         border: none;
         outline: none;
-
-        &:empty:not(:focus)::before {
-            content: attr(placeholder);
-            font-size: 15px
-        }
+        font-size: medium;
 
         &::-webkit-scrollbar {
             width: 6px;

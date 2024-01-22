@@ -11,9 +11,9 @@ export default function ListBox({ id }) {
 
     const handleDelete = () => {
         setCleanUp(true);
-        setTimeout(()=>{
+        setTimeout(() => {
             dispatch(notesActions.deleteNote(id));
-        },500);
+        }, 500);
     };
 
 
@@ -48,9 +48,13 @@ export default function ListBox({ id }) {
                 />
                 <RiDeleteBin6Line onClick={handleDelete} />
             </span>
-            <p contentEditable placeholder="Description..." onInput={handleDescriptionChange}>
-                {currentNote.description}
-            </p>
+            <textarea
+                contentEditable
+                placeholder="Description..."
+                value={currentNote.description}
+                onChange={handleDescriptionChange}
+            >
+            </textarea>
         </div>
     );
 }
