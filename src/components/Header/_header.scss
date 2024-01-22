@@ -3,6 +3,10 @@
     border-bottom: 1px solid $border-color;
     height: 5rem;
     padding: 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 .header_left {
