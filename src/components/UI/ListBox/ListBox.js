@@ -49,7 +49,6 @@ export default function ListBox({ id }) {
                 <RiDeleteBin6Line onClick={handleDelete} />
             </span>
             <textarea
-                contentEditable
                 placeholder="Description..."
                 value={currentNote.description}
                 onChange={handleDescriptionChange}
