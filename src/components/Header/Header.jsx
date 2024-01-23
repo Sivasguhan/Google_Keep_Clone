@@ -10,7 +10,7 @@ export default function Header({ setOpen, searchValue, setSearchValue }) {
     return (
         <header className='header'>
             <section className="header_left">
-                <VscThreeBars size={30} onClick={() => setOpen(prev => !prev)} />
+                <VscThreeBars size={30} onClick={() => setOpen(prev => !prev)} data-testid="menu-icon" />
                 <span>
                     <img src={KeepLogo} height={'50px'} />
                     <p>Keep</p>
