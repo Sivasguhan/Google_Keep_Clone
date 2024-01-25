@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react";
 import userEvent from '@testing-library/user-event';
 import SideBar from "./SideBar";
+import renderer from 'react-test-renderer'
 
 test('initial state is set correctly', () => {
     const { queryByText } = render(<SideBar />);
@@ -12,9 +13,13 @@ test('initial state is set correctly', () => {
 });
 
 test('sidebar reacts to mouse hover', () => {
-    const { container } = render(<SideBar open={true}/>);
-    const sidebar = container.querySelector('.sidebar'); // Select the nav element
-  
+    const { container } = render(<SideBar open={true} />);
+    const sidebar = container.querySelector('.sidebar');
     userEvent.hover(sidebar);
     expect(container.querySelectorAll('span')).toHaveLength(5);
-  });
+});
+
+test("Snapshot test", () => {
+    const snap = renderer.create(<SideBar />).toJSON();
+    expect(snap).toMatchSnapshot();
+})

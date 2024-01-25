@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test 1`] = `
+<nav
+  className="sidebar"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <div>
+    <div
+      className="imageContainer"
+      style={
+        {
+          "height": "40px",
+          "padding": "5px",
+          "width": "40px",
+        }
+      }
+    >
+      <img
+        src="mock-file"
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      className="imageContainer"
+      style={
+        {
+          "height": "40px",
+          "padding": "5px",
+          "width": "40px",
+        }
+      }
+    >
+      <img
+        src="mock-file"
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      className="imageContainer"
+      style={
+        {
+          "height": "40px",
+          "padding": "5px",
+          "width": "40px",
+        }
+      }
+    >
+      <img
+        src="mock-file"
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      className="imageContainer"
+      style={
+        {
+          "height": "40px",
+          "padding": "5px",
+          "width": "40px",
+        }
+      }
+    >
+      <img
+        src="mock-file"
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      className="imageContainer"
+      style={
+        {
+          "height": "40px",
+          "padding": "5px",
+          "width": "40px",
+        }
+      }
+    >
+      <img
+        src="mock-file"
+      />
+    </div>
+  </div>
+</nav>
+`;
